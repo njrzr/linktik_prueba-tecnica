@@ -222,7 +222,92 @@ const proccessPurchase = async(data: FormData): Promise<string> => {
 }
 
 const dashboard = async(): Promise<object> => {
+  let totalSale = 0;
+  const lowStock = [];
+  const topProducts = [];
+  const topClients = [];
 
+  const supabase = createClient(url, key)
+
+  const { data: saleData, error: saleError } = await supabase
+    .from('coffee_sales')
+    .select(`
+      *,
+      coffee_products (
+        product
+      ),
+      coffee_clients (
+        first_name,
+        last_name
+      )
+    `);
+
+  const { data: productData, error: productError } = await supabase
+    .from('coffee_products')
+    .select('*');
+
+  for (const sale of saleData) {
+    totalSale += sale.total;
+
+    if(topProducts[`'${sale.product_id}'`] !== undefined) {
+      topProducts[`'${sale.product_id}'`].quantity += sale.quantity;
+    } else {
+      topProducts[`'${sale.product_id}'`] = {
+        product: sale.coffee_products.product,
+        quantity: sale.quantity
+      };
+    };
+
+    if(topClients[`'${sale.client_id}'`] !== undefined) {
+      topClients[`'${sale.client_id}'`].purchases += 1;
+    } else {
+      topClients[`'${sale.client_id}'`] = {
+        client: sale.coffee_clients.first_name + ' ' + sale.coffee_clients.last_name,
+        purchases: 1
+      };
+    };
+  };
+
+  const toValueTopProducts = Object.values(topProducts);
+  const sortedTopProducts = toValueTopProducts.sort((a, b) => {
+    return b.quantity - a.quantity;
+  });
+
+  const topFiveProducts = sortedTopProducts.slice(0, 5);
+
+  const toValueTopClients = Object.values(topClients);
+  const sortedTopClients = toValueTopClients.sort((a, b) => {
+    return b.quantity - a.quantity;
+  });
+
+  const topFiveClients = sortedTopClients.slice(0, 5);
+
+  for (const product of productData) {
+    if(product.stock <= 5) lowStock.push({
+      id: product.id,
+      product: product.product,
+      stock: product.stock
+    });
+  }
+
+  if (saleError) {
+    console.error(saleError);
+    return { error: saleError };
+  }
+
+  if (productError) {
+    console.error(productError);
+    return { error: productError };
+  }
+
+  const data = {
+    'total_sales': totalSale,
+    'low_stock': JSON.stringify(lowStock),
+    'top_products': JSON.stringify(topFiveProducts),
+    'top_clients': JSON.stringify(topFiveClients)
+  };
+  console.log(data);
+  return data;
 }
 
 export {

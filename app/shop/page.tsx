@@ -14,7 +14,7 @@ export default function CoffeeShop() {
   const [ toggleForm, setToggleForm ] = useState(false);
   const [ added, setAdded ] = useState(false);
   const [ total, setTotal ] = useState(0);
-  const [ items, setItems] = useState([]) ;
+  const [ items, setItems] = useState<object>([]) ;
   const [ message, setMessage ] = useState('');
   const [ form, setForm ] = useState({
     'first_name': '',
