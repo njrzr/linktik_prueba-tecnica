@@ -1,3 +1,8 @@
+## Rutas de la aplicacion
+- /shop | en esta vista se visualiza los productos y permite la compra de los mismos
+- /admin | en esta vista se visualiza los productos creados y permite la creacion, edicion y borrado de productos
+- /dashboard | en esta esta vista se visualiza informacion basica de como se esta se desempeñando la aplicacion
+
 ## Mis decisiones
 
 Para comenzar decidi comenzar con la vista para visualizar la compra de productos a la cual llame shop, en este vista se visualizara los productos creados y permite la compra de los mismos a traves de un modal que se mostrara al presionar el boton de con el icono de granos de cafe, ahi se mostrara los productos agregados y al dar click a comprar mostrara otro modal donde el cliente debe ingresar los datos
@@ -18,6 +23,7 @@ Por el ajustado tiempo que tuve, decidi darle importancia lo que era necesario p
 - Mejorar las vistas para ajustarla a formatos moviles (de ser requeridos) y asi facilitar su uso para este formato de vista.
 - Desearia haber agregado la visualizacion de clientes para ver sus habitos de compra.
 - Agregar un login para usuario para visualizacion de datos y compras hechas en la aplicacion.
+- Agregar graficos para mejor visualizacion de los datos en el dashboard.
 
 ## Modelacion de base de datos
 
