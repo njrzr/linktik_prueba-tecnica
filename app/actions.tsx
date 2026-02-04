@@ -306,7 +306,7 @@ const dashboard = async(): Promise<object> => {
     'top_products': JSON.stringify(topFiveProducts),
     'top_clients': JSON.stringify(topFiveClients)
   };
-  console.log(data);
+  
   return data;
 }
 

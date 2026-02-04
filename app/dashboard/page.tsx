@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { dashboard } from "../actions";
+import Link from "next/link";
 
 export default function Dahsboard() {
   const [ gotData, setGotData ] = useState(false);
@@ -35,13 +36,22 @@ export default function Dahsboard() {
      <div className="relative w-full h-screen bg-white p-1 flex flex-col gap-1">
       <header className="relative flex justify-between p-4 text-white font-mono bg-green-900 rounded-lg">
         <p className="relative text-lg sm:text-2xl font-semibold">Dashboard</p>
-        <p className="relative text-lg sm:text-2xl font-semibold">LINKTIC | Prueba tecnica</p>
+        <div
+          className="relative flex justify-between items-center gap-4">
+          <div className="relative flex justify-center items-center gap-4 w-auto h-auto rounded-lg">
+            <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/shop">/SHOP</Link>
+            <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/admin">/ADMIN</Link>
+            <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/dashboard">/DASHBOARD</Link>
+          </div>
+
+          <p className="relative text-lg sm:text-2xl font-semibold">LINKTIC | Prueba tecnica</p>
+        </div>
       </header>
 
       <div
         className="relative grid sm:grid-cols-12 gap-1 pb-20 overflow-clip overflow-y-scroll" style={scrollbarNone}>
         { !gotData ? (
-            <p className="relative text-xl text-center bg-green-400 text-white font-bold uppercase py-6 rounded-lg animate-pulse">
+            <p className="relative col-span-12 text-xl text-center bg-green-400 text-white font-bold uppercase py-6 rounded-lg animate-pulse">
               cargando dashboard
             </p>
           ) : (

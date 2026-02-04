@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { getProducts, createProductItem, deleteProductItem, updateProductItem } from "../actions";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { CancelFreeIcons } from "@hugeicons/core-free-icons";
+import Link from "next/link";
 
 export default function Admin() {
   const [ productItems, setProduct ] = useState([]);
@@ -147,7 +148,17 @@ export default function Admin() {
      <div className="relative w-full h-screen bg-white p-1 flex flex-col gap-1">
       <header className="relative flex justify-between p-4 text-white font-mono bg-green-900 rounded-lg">
         <p className="relative text-lg sm:text-2xl font-semibold">Admin / Administrar productos</p>
-        <p className="relative text-lg sm:text-2xl font-semibold">LINKTIC | Prueba tecnica</p>
+        
+        <div
+          className="relative flex justify-between items-center gap-4">
+          <div className="relative flex justify-center items-center gap-4 w-auto h-auto rounded-lg">
+            <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/shop">/SHOP</Link>
+            <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/admin">/ADMIN</Link>
+            <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/dashboard">/DASHBOARD</Link>
+          </div>
+
+          <p className="relative text-lg sm:text-2xl font-semibold">LINKTIC | Prueba tecnica</p>
+        </div>
       </header>
 
       <div
