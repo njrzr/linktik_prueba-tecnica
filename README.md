@@ -20,7 +20,6 @@ Respecto al servidor, pense en principio usar un servidor, pero decidi tomar la 
 Por el ajustado tiempo que tuve, decidi darle importancia lo que era necesario por lo cual en mi lista de ajustes/mejoras estan:
 
 - Agregar un login para la vista de administracion y dashboard, lei que supabase tiene un sistema para implementacion de login, por lo cual seria la primera opcion a usar para impementacion.
-- Mejorar las vistas para ajustarla a formatos moviles (de ser requeridos) y asi facilitar su uso para este formato de vista.
 - Desearia haber agregado la visualizacion de clientes para ver sus habitos de compra.
 - Agregar un login para usuario para visualizacion de datos y compras hechas en la aplicacion.
 - Agregar graficos para mejor visualizacion de los datos en el dashboard.
