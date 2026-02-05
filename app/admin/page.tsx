@@ -146,11 +146,11 @@ export default function Admin() {
 
   return (
      <div className="relative w-full h-screen bg-white p-1 flex flex-col gap-1">
-      <header className="relative flex justify-between p-4 text-white font-mono bg-green-900 rounded-lg">
+      <header className="relative flex flex-col sm:flex-row justify-between items-center p-4 text-white font-mono bg-green-900 rounded-lg">
         <p className="relative text-lg sm:text-2xl font-semibold">Admin / Administrar productos</p>
         
         <div
-          className="relative flex justify-between items-center gap-4">
+          className="relative flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="relative flex justify-center items-center gap-4 w-auto h-auto rounded-lg">
             <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/shop">/SHOP</Link>
             <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/admin">/ADMIN</Link>
@@ -162,14 +162,14 @@ export default function Admin() {
       </header>
 
       <div
-        className="relative grid sm:grid-cols-12 gap-1 pb-20 overflow-clip overflow-y-scroll" style={scrollbarNone}>
+        className="relative grid sm:grid-cols-12 gap-1 sm:pb-20 overflow-clip overflow-y-scroll" style={scrollbarNone}>
         <form
-          className="relative col-span-12 p-2 flex justify-between bg-green-500 rounded-lg overflow-clip"
+          className="relative col-span-12 sm:p-2 flex justify-between bg-green-500 rounded-lg overflow-clip"
           onSubmit={createProduct}>
           <div
-            className="relative w-full flex justify-between gap-2 p-2 rounded-lg">
+            className="relative w-full flex flex-col sm:flex-row justify-between gap-2 p-2 rounded-lg">
             <label
-              className="relative flex gap-4 items-center p-1">
+              className="relative flex gap-4 justify-between items-center p-1">
               Producto:
               <input
                 className="relative px-2 py-1 ring-2 ring-black/25 rounded-lg bg-white text-black placeholder:text-black/50"
@@ -181,7 +181,7 @@ export default function Admin() {
             </label>
 
             <label
-              className="relative flex gap-4 items-center p-1">
+              className="relative flex gap-4 justify-between items-center p-1">
               Precio:
               <input
                 className="relative px-2 py-1 ring-2 ring-black/25 rounded-lg bg-white text-black placeholder:text-black/50"
@@ -194,7 +194,7 @@ export default function Admin() {
             </label>
 
             <label
-              className="relative flex gap-4 items-center p-1">
+              className="relative flex gap-4 justify-between items-center p-1">
               Stock:
               <input
                 className="relative px-2 py-1 ring-2 ring-black/25 rounded-lg bg-white text-black placeholder:text-black/50"
@@ -219,7 +219,7 @@ export default function Admin() {
 
             <button
               type="submit"
-              className="relative w-60 bg-blue-500 hover:bg-blue-400 rounded-lg uppercase font-semibold py-2 transition-all duration-300 cursor-pointer">
+              className="relative w-full sm:w-60 bg-blue-500 hover:bg-blue-400 rounded-lg uppercase font-semibold py-2 transition-all duration-300 cursor-pointer">
                 crear producto
             </button>
           </div>
@@ -236,8 +236,8 @@ export default function Admin() {
               return(
                 <div
                   key={'product-' + index}
-                  className={`relative bg-green-400 p-4 flex items-center rounded-lg gap-4`}>
-                    <div className="relative w-2/12 flex gap-2">
+                  className={`relative bg-green-400 p-4 flex flex-col-reverse sm:flex-row items-center rounded-lg gap-4`}>
+                    <div className="relative w-full sm:w-2/12 flex gap-2">
                       <button
                         onClick={() => toggleEdit(item)}
                         className="relative bg-blue-500 w-1/2 h-10 rounded-lg overflow-clip uppercase text-sm text-center font-semibold cursor-pointer"
@@ -254,13 +254,13 @@ export default function Admin() {
                       </form>
                     </div>
 
-                    <p className="relative w-6/12 text-white font-semibold">Producto: { item.product }</p>
-                    <p className="relative w-3/12 text-white font-semibold">Precio: { formatPrice(item.price) }</p>
-                    <p className="relative w-1/12 text-white font-semibold">Stock: { item.stock }</p>
+                    <p className="relative sm:w-6/12 text-white font-semibold">Producto: { item.product }</p>
+                    <p className="relative sm:w-3/12 text-white font-semibold">Precio: { formatPrice(item.price) }</p>
+                    <p className="relative sm:w-1/12 text-white font-semibold">Stock: { item.stock }</p>
                     <Image
-                      width={'360'}
-                      height={'360'}
-                      className="relative w-12 h-12 object-contain bg-green-100 rounded shrink-0"
+                      width={'100'}
+                      height={'100'}
+                      className="relative w-16 h-16 object-contain bg-green-100 rounded shrink-0"
                       src={item.image}
                       alt="Imagen del producto."
                     />
@@ -283,14 +283,14 @@ export default function Admin() {
         className={`fixed w-full h-screen flex justify-center items-start top-0 left-0 bg-green-600/75 shadow-sm shadow-rose-800 transition-all duration-300 whitespace-nowrap overflow-clip ${ edit ? 'max-h-full' : 'max-h-0' }`}>
         <button
           onClick={() => toggleEdit(0, 'close')}
-          className="absolute top-2 right-2 w-10 h-10 bg-red-500 hover:bg-red-400 flex justify-center items-center rounded-lg cursor-pointer transition-all duration-300">
+          className="absolute top-2 right-2 w-10 h-10 bg-red-500 hover:bg-red-400 flex justify-center items-center rounded-lg cursor-pointer transition-all duration-300 z-10">
           <HugeiconsIcon
             size={36}
             icon={CancelFreeIcons} />
         </button>
 
         <div
-          className="relative w-auto h-auto mt-6 p-4 bg-white rounded-lg">
+          className="relative w-auto h-auto sm:mt-6 p-4 bg-white rounded-lg">
             <form
               onSubmit={updateProduct}>
               <div

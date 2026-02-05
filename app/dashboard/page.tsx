@@ -34,10 +34,10 @@ export default function Dahsboard() {
 
   return (
      <div className="relative w-full h-screen bg-white p-1 flex flex-col gap-1">
-      <header className="relative flex justify-between p-4 text-white font-mono bg-green-900 rounded-lg">
+      <header className="relative flex flex-col sm:flex-row justify-between items-center p-4 text-white font-mono bg-green-900 rounded-lg">
         <p className="relative text-lg sm:text-2xl font-semibold">Dashboard</p>
         <div
-          className="relative flex justify-between items-center gap-4">
+          className="relative flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="relative flex justify-center items-center gap-4 w-auto h-auto rounded-lg">
             <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/shop">/SHOP</Link>
             <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/admin">/ADMIN</Link>

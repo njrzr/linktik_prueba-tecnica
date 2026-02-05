@@ -126,11 +126,11 @@ export default function CoffeeShop() {
 
   return(
     <div className="relative w-full h-screen bg-white p-1 flex flex-col gap-1">
-      <header className="relative flex justify-between items-center p-4 text-white font-mono bg-green-900 rounded-lg">
+      <header className="relative flex flex-col sm:flex-row justify-between items-center p-4 text-white font-mono bg-green-900 rounded-lg">
         <p className="relative text-lg sm:text-2xl font-semibold">Coffee Shop</p>
         
         <div
-          className="relative flex justify-between items-center gap-4">
+          className="relative flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="relative flex justify-center items-center gap-4 w-auto h-auto rounded-lg">
             <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/shop">/SHOP</Link>
             <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/admin">/ADMIN</Link>
@@ -206,6 +206,8 @@ export default function CoffeeShop() {
       <button
         onClick={toggleCartAction}
         className={`fixed flex justify-center items-center bottom-2 sm:bottom-4 right-2 sm:right-4 w-16 h-16 bg-blue-500 rounded-2xl hover:bg-blue-500/75 transition-all duration-300 cursor-pointer ${ coffeeCart.length > 0 ? 'text-green-800' : '' }`}>
+        <span
+          className={`absolute w-6 h-6 -top-2 -left-2 bg-green-300 shadow-sm shadow-black rounded-full transition-all duration-300 ${ coffeeCart.length > 0 ? 'scale-100' : 'scale-0'} `}></span>
         <HugeiconsIcon
           size={32}
           icon={CoffeeBeansIcon} />
@@ -259,7 +261,7 @@ export default function CoffeeShop() {
       </div>
 
       <div
-        className={`fixed bg-white w-3/12 bottom-22 right-4 rounded-lg inset-shadow-sm inset-shadow-pink-800 transition-all duration-300 overflow-clip ${ toggleForm ? 'max-h-full' : 'max-h-0'}`}>
+        className={`fixed bg-white w-11/12 sm:w-3/12 bottom-22 right-4 rounded-lg inset-shadow-sm inset-shadow-pink-800 transition-all duration-300 overflow-clip ${ toggleForm ? 'max-h-full' : 'max-h-0'}`}>
           <form
             onSubmit={makePurchase}
             className="relative space-y-2 p-2">
