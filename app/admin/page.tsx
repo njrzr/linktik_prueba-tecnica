@@ -152,9 +152,9 @@ export default function Admin() {
         <div
           className="relative flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="relative flex justify-center items-center gap-4 w-auto h-auto rounded-lg">
-            <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/shop">/SHOP</Link>
-            <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/admin">/ADMIN</Link>
-            <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/dashboard">/DASHBOARD</Link>
+            <Link className="relative text-sm text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/shop">/SHOP</Link>
+            <Link className="relative text-sm text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/admin">/ADMIN</Link>
+            <Link className="relative text-sm text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/dashboard">/DASHBOARD</Link>
           </div>
 
           <p className="relative text-lg sm:text-2xl font-semibold">LINKTIC | Prueba tecnica</p>
@@ -162,9 +162,9 @@ export default function Admin() {
       </header>
 
       <div
-        className="relative grid sm:grid-cols-12 gap-1 sm:pb-20 overflow-clip overflow-y-scroll" style={scrollbarNone}>
+        className="relative grid grid-cols-1 sm:grid-cols-12 gap-1 sm:pb-20 overflow-clip overflow-y-scroll" style={scrollbarNone}>
         <form
-          className="relative col-span-12 sm:p-2 flex justify-between bg-green-500 rounded-lg overflow-clip"
+          className="relative col-span-1 sm:col-span-12 sm:p-2 flex justify-between bg-green-500 rounded-lg overflow-clip"
           onSubmit={createProduct}>
           <div
             className="relative w-full flex flex-col sm:flex-row justify-between gap-2 p-2 rounded-lg">
@@ -210,7 +210,7 @@ export default function Admin() {
               className="relative flex gap-4 items-center p-1">
               Imagen:
               <input
-                className="relative px-2 py-1 ring-2 ring-black rounded-lg bg-white text-black"
+                className="relative w-full px-2 py-1 ring-2 ring-black rounded-lg bg-white text-black"
                 type="file"
                 accept="image/png, image/jpg, image/jpeg"
                 onChange={(e) => setValue(e, 'create')}
@@ -226,7 +226,7 @@ export default function Admin() {
         </form>
 
         <div
-          className="relative w-auto h-auto col-span-12 space-y-2 overflow-clip overflow-y-scroll rounded-lg">
+          className="relative w-auto h-auto col-span-1 sm:col-span-12 space-y-2 overflow-clip overflow-y-scroll rounded-lg">
           { productItems.length == 0 ? (
             <p className="relative text-xl text-center bg-green-400 text-white font-bold uppercase py-6 rounded-lg animate-pulse">
               cargando

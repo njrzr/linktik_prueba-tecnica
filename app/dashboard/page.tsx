@@ -39,9 +39,9 @@ export default function Dahsboard() {
         <div
           className="relative flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="relative flex justify-center items-center gap-4 w-auto h-auto rounded-lg">
-            <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/shop">/SHOP</Link>
-            <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/admin">/ADMIN</Link>
-            <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/dashboard">/DASHBOARD</Link>
+            <Link className="relative text-sm text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/shop">/SHOP</Link>
+            <Link className="relative text-sm text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/admin">/ADMIN</Link>
+            <Link className="relative text-sm text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/dashboard">/DASHBOARD</Link>
           </div>
 
           <p className="relative text-lg sm:text-2xl font-semibold">LINKTIC | Prueba tecnica</p>

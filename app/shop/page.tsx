@@ -132,9 +132,9 @@ export default function CoffeeShop() {
         <div
           className="relative flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="relative flex justify-center items-center gap-4 w-auto h-auto rounded-lg">
-            <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/shop">/SHOP</Link>
-            <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/admin">/ADMIN</Link>
-            <Link className="relative text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/dashboard">/DASHBOARD</Link>
+            <Link className="relative text-sm text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/shop">/SHOP</Link>
+            <Link className="relative text-sm text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/admin">/ADMIN</Link>
+            <Link className="relative text-sm text-white font-semibold bg-green-500 hover:bg-gray-400 px-6 py-2 rounded-lg transition-all duration-300" href="/dashboard">/DASHBOARD</Link>
           </div>
 
           <p className="relative text-lg sm:text-2xl font-semibold">LINKTIC | Prueba tecnica</p>
@@ -312,7 +312,7 @@ export default function CoffeeShop() {
       <div
         className={`fixed h-16 flex justify-center items-center bottom-2 sm:bottom-4 right-20 sm:right-22 bg-green-600 rounded-2xl overflow-clip shadow-sm shadow-rose-800 transition-all duration-300 ${ added ? 'max-w-full' : 'max-w-0' }`}>
         <p
-          className="relative mx-12 uppercase text-xl font-medium whitespace-nowrap">articulo agregado</p>
+          className="relative mx-8 uppercase text-xl font-medium whitespace-nowrap">articulo agregado</p>
       </div>
 
       <div
